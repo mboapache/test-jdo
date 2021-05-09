@@ -1,31 +1,23 @@
 # JDO Converter Test Case
 
 ## Summary
-PM.makePersistent runs into an exception when using a PC class with Convert annotation instead of 
-metadata in a .jdo file.
+PM.makePersistent runs into an exception when using a PC class with Convert annotation instead of metadata in a .jdo file.
 
 The setup in this branch shows the working test case using a JDO metadata file.
 
 
 ## Details
 
-This test case shows a runtime issue with a persistence capable class having a persistent field with a converter 
-annotation.
+This test case shows a runtime issue with a persistence capable class having a persistent field with a converter annotation.
 
-Model class PCRect is a persistence capable class with two fields of type Point. Point is a simple class 
-with two int fields x and y. Both point fields are mapped to a string of the form "x:y" in the database 
-using a converter class PointToStringConverter.
+Model class PCRect is a persistence capable class with two fields of type Point. Point is a simple class with two int fields x and y. Both point fields are mapped to a string of the form "x:y" in the database using a converter class PointToStringConverter.
 
 The test case SimpleTest creates a PCRect instance with two Point instances and commits the transaction. 
-When using annotations in the field declaration of the PCRect class, then method PersistenceManager.makePersistent 
-throws an  IllegalArgumentException (see stacktrace below). 
+When using annotations in the field declaration of the PCRect class, then method PersistenceManager.makePersistent throws an  IllegalArgumentException (see stacktrace below). 
 
-The exception does not occur when using JDO metadata in a .jdo file (package.jdo) instead of using annotations in 
-the PCRect class.
+The exception does not occur when using JDO metadata in a .jdo file (package.jdo) instead of using annotations in the PCRect class.
 
-The branches [converter-annotation](https://github.com/mboapache/test-jdo/tree/converter-annotation) and 
-[converter-metadata](https://github.com/mboapache/test-jdo/tree/converter-metadata) contain the test case 
-showing this behaviour. The branch converter-annotation shows the exception.
+The branches [converter-annotation](https://github.com/mboapache/test-jdo/tree/converter-annotation) and [converter-metadata](https://github.com/mboapache/test-jdo/tree/converter-metadata) contain the test case showing this behaviour. The branch converter-annotation shows the exception.
 
 ## Stacktrace
 

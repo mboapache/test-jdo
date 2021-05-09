@@ -103,7 +103,7 @@
                 <version>${dn.maven.plugin.ver}</version>
                 <configuration>
                     <api>JDO</api>
-                    <persistenceUnitName>MyTest</persistenceUnitName>
+                    <metadataIncludes>**/*.jdo</metadataIncludes>
                     <fork>false</fork>
                     <verbose>false</verbose>
                     <log4jConfiguration>${basedir}/src/main/resources/log4j.properties</log4jConfiguration>

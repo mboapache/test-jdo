@@ -1,12 +1,12 @@
-#JDO Converter Test Case
+# JDO Converter Test Case
 
-##Summary
+## Summary
 PM.makePersistent runs into an exception when using a PC class with Convert annotation instead of 
 metadata in a .jdo file.
 
 The setup in this branch shows the exception when using annotations.
 
-##Details
+## Details
 
 This test case shows a runtime issue with a persistence capable class having a persistent field with a converter 
 annotation.
@@ -26,7 +26,7 @@ The branches [converter-annotation](https://github.com/mboapache/test-jdo/tree/c
 [converter-metadata](https://github.com/mboapache/test-jdo/tree/converter-metadata) contain the test case 
 showing this behaviour. The branch converter-annotation shows the exception.
 
-##Stacktrace
+## Stacktrace
 
 ```  
 java.lang.IllegalArgumentException: out of field index :1 
@@ -44,7 +44,7 @@ java.lang.IllegalArgumentException: out of field index :1
     at org.datanucleus.test.SimpleTest.testSimple(SimpleTest.java:32)
 ```
 
-#test-jdo
+# test-jdo
 
 Template project for any user testcase using JDO.
 To create a DataNucleus test simply fork this project, and add/edit as 
